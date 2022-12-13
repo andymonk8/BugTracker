@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel;
+using BugTracker.Extensions;
 
 namespace BugTracker.Models
 {
@@ -26,7 +27,10 @@ namespace BugTracker.Models
 
         // (" ** Just like our image properties we will capture file data in the exact same way ")
         [NotMapped]
+        [DisplayName("Select a file")]
         [DataType(DataType.Upload)]
+        [MaxFileSize(1024 * 1024)]
+        [AllowedExtensions(new string[] { ".jpg", ".png", ".doc", ".docx", ".xls", ".xlsx", ".pdf" })]
         public IFormFile? FormFile { get; set; }
 
         [DisplayName("File Name")]

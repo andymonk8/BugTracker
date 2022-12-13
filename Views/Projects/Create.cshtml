@@ -12,10 +12,10 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="CompanyId" class="control-label"></label>
                 <select asp-for="CompanyId" class ="form-control" asp-items="ViewBag.CompanyId"></select>
-            </div>
+            </div>*@
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -45,7 +45,15 @@
                 <label asp-for="ProjectPriorityId" class="control-label"></label>
                 <select asp-for="ProjectPriorityId" class ="form-control" asp-items="ViewBag.ProjectPriorityId"></select>
             </div>
+
             <div class="form-group">
+                <label asp-for="ProjectImage" class="control-label">Project Image</label>
+                <img id="projectImage" class="img-fluid border rounded-3 m-2" style="max-height: 250px;" src="~/img/DefaultProjectImage.png">
+                <input asp-for="ProjectImage" type="file" class="form-control mt-3 pt-2" accept=".png,.jpg,.jpeg,.gif"
+                       onchange="document.getElementById('projectImage').src = window.URL.createObjectURL(this.files[0])" />
+            </div>
+
+            @*<div class="form-group">
                 <label asp-for="ImageData" class="control-label"></label>
                 <input asp-for="ImageData" class="form-control" />
                 <span asp-validation-for="ImageData" class="text-danger"></span>
@@ -59,7 +67,8 @@
                 <label class="form-check-label">
                     <input class="form-check-input" asp-for="Archived" /> @Html.DisplayNameFor(model => model.Archived)
                 </label>
-            </div>
+            </div>*@
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
