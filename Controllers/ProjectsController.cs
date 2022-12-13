@@ -149,7 +149,7 @@ namespace BugTracker.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AssignProjectMembers(ProjectMembersViewModel viewModel, int companyId, int projectId, BTUser member)
+        public async Task<IActionResult> AssignProjectMembers(ProjectMembersViewModel viewModel)
         {
             if (viewModel.Project?.Id != null)
             {
@@ -158,11 +158,9 @@ namespace BugTracker.Controllers
                     //BTUser newPM = await _userManager.FindByIdAsync(viewModel.PMId);
                     // (" newPM ") as Parameter for Below?! If Needed?! Etc.?!
 
+                    BTUser member = await _userManager.FindByIdAsync(viewModel.SelectedMembers);
+
                     await _projectService.AddMemberToProjectAsync(member, viewModel.Project.Id);
-                }
-                else
-                {
-                    await _projectService.RemoveMemberFromProjectAsync(member, viewModel.Project.Id, companyId);
                 }
 
                 return RedirectToAction(nameof(Details), new { id = viewModel.Project?.Id });
@@ -323,10 +321,15 @@ namespace BugTracker.Controllers
                     project.CompanyId = companyId;
 
                     //project.DateCreated = DateTime.SpecifyKind(project.DateCreated, DateTimeKind.Utc);
+
                     project.DateCreated = PostgresDate.Format(project.DateCreated);
                     //project.DateCreated = PostgresDate.Format(DateTime.UtcNow);
                     project.StartDate = PostgresDate.Format(DateTime.UtcNow);
                     project.EndDate = PostgresDate.Format(DateTime.UtcNow);
+
+                    // Gets Red Ramen?!
+                    //project.StartDate = PostgresDate.Format(project.StartDate);
+                    //project.EndDate = PostgresDate.Format(project.EndDate);
 
                     //project.StartDate = DateTime.SpecifyKind(project.StartDate.Value, DateTimeKind.Utc);
 

@@ -10,10 +10,10 @@ namespace BugTracker.Models
         public int Id { get; set; }
 
         // Foreign Key / FK ?!
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
 
         // Foreign Key / FK ?!
-        public int TicketId { get; set; }
+        public int? TicketId { get; set; }
 
         // [StringLength(100, ErrorMessage = "The {0} must be at least {2} and max {1} characters long.", MinimumLength = 2)]
         [Required]

@@ -82,6 +82,10 @@
 							<ul class="right_chat list-unstyled mb-0">
 
 								[Project Members]
+								@foreach(BTUser member in Model.Members)
+								{
+									<li>@member.FullName</li>
+								}
 								@* Logic for avatars *@
 								<div class="float-end">
 									@if (User.IsInRole(nameof(BTRoles.Admin)) || (User.IsInRole(nameof(BTRoles.ProjectManager))))
