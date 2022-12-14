@@ -183,9 +183,5 @@ namespace BugTracker.Controllers
 
         }
 
-        private bool InviteExists(int id)
-        {
-            return _context.Invites.Any(e => e.Id == id);
-        }
     }
 }
