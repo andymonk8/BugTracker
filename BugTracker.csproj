@@ -7,78 +7,7 @@
     <UserSecretsId>aspnet-BugTracker-5332e0ee-1334-4b20-8274-72d28c54f13d</UserSecretsId>
   </PropertyGroup>
 
-  <ItemGroup>
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\big5-added.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\cp936.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\cp949.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\cp950.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\eucjp.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\gb18030-ranges.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\gbk-added.json" />
-    <Content Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\tables\shiftjis.json" />
-    <Content Include="wwwroot\assets\libs\treeview\node_modules\jquery\AUTHORS.txt" />
-    <Content Include="wwwroot\assets\libs\treeview\node_modules\jquery\external\sizzle\LICENSE.txt" />
-    <Content Include="wwwroot\assets\libs\treeview\node_modules\jquery\LICENSE.txt" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\arr-diff\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\arr-union\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\array-slice\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\extend-shallow\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\kind-of\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-minify\node_modules\plugin-error\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\at-rule.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\comment.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\container.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\css-syntax-error.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\declaration.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\input.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\lazy-result.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\list.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\map-generator.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\node.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\parse.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\parser.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\postcss.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\previous-map.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\processor.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\result.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\root.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\rule.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\stringifier.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\stringify.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\terminal-highlight.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\tokenize.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\vendor.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\warn-once.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\lib\warning.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\bin\rtlcss.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\config-loader.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\config.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\directive-parser.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\plugin.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\rtlcss.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\state.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\lib\util.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\index.js" />
-    <None Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\strip-json-comments\license" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\dbcs-codec.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\dbcs-data.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\index.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\internal.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\sbcs-codec.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\sbcs-data-generated.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\sbcs-data.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\utf16.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\utf32.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\encodings\utf7.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\lib\bom-handling.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\lib\index.js" />
-    <None Include="wwwroot\assets\libs\pdfmake\node_modules\iconv-lite\lib\streams.js" />
-    <None Include="wwwroot\assets\libs\treeview\node_modules\jquery\external\sizzle\sizzle.min.js" />
-    <None Include="wwwroot\assets\libs\treeview\node_modules\jquery\jquery.min.js" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="MailKit" Version="3.4.2" />
@@ -93,48 +22,6 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
     <PackageReference Include="X.PagedList" Version="8.4.3" />
     <PackageReference Include="X.PagedList.Mvc.Core" Version="8.4.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\assets\libs\chartist\scss\settings\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net-bs5\types\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net-buttons-bs5\types\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net-buttons\types\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net-select-bs5\types\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net-select\types\" />
-    <Folder Include="wwwroot\assets\libs\datatables.net\types\" />
-    <Folder Include="wwwroot\assets\libs\flatpickr\types\" />
-    <Folder Include="wwwroot\assets\libs\flatpickr\utils\" />
-    <Folder Include="wwwroot\assets\libs\flot-charts\examples\" />
-    <Folder Include="wwwroot\assets\libs\flot-orderbars\examples\" />
-    <Folder Include="wwwroot\assets\libs\gmaps\docs\" />
-    <Folder Include="wwwroot\assets\libs\gmaps\examples\" />
-    <Folder Include="wwwroot\assets\libs\gmaps\test\" />
-    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\postcss\docs\" />
-    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\docs\" />
-    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\node_modules\" />
-    <Folder Include="wwwroot\assets\libs\gulp-rtlcss\node_modules\rtlcss\test\" />
-    <Folder Include="wwwroot\assets\libs\ion-rangeslider\less\skins\" />
-    <Folder Include="wwwroot\assets\libs\jquery-sparkline\src\" />
-    <Folder Include="wwwroot\assets\libs\jquery.counterup\demo\" />
-    <Folder Include="wwwroot\assets\libs\jquery.flot.tooltip\examples\" />
-    <Folder Include="wwwroot\assets\libs\jquery.scrollto\tests\" />
-    <Folder Include="wwwroot\assets\libs\minimist\example\" />
-    <Folder Include="wwwroot\assets\libs\minimist\test\" />
-    <Folder Include="wwwroot\assets\libs\moment\src\" />
-    <Folder Include="wwwroot\assets\libs\multiselect\test\" />
-    <Folder Include="wwwroot\assets\libs\pdfmake\src\" />
-    <Folder Include="wwwroot\assets\libs\postcss\node_modules\" />
-    <Folder Include="wwwroot\assets\libs\raphael\dev\test\" />
-    <Folder Include="wwwroot\assets\libs\selectize\less\plugins\" />
-    <Folder Include="wwwroot\assets\libs\toastr\tests\" />
-    <Folder Include="wwwroot\assets\libs\treeview\demo\" />
-    <Folder Include="wwwroot\assets\libs\treeview\node_modules\jquery\dist\" />
-    <Folder Include="wwwroot\assets\libs\treeview\node_modules\jquery\external\sizzle\dist\" />
-    <Folder Include="wwwroot\assets\libs\treeview\node_modules\jquery\src\" />
-    <Folder Include="wwwroot\assets\libs\twitter-bootstrap-wizard\examples\" />
-    <Folder Include="wwwroot\assets\libs\waypoints\src\" />
-    <Folder Include="wwwroot\assets\libs\waypoints\test\" />
   </ItemGroup>
 
 </Project>

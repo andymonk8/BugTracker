@@ -24,12 +24,12 @@
             <th>
                 @Html.DisplayNameFor(model => model.LastUpdated)
             </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.Archived)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ArchivedByProject)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Project)
             </th>
@@ -66,12 +66,12 @@
             <td>
                 @Html.DisplayFor(modelItem => item.LastUpdated)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.Archived)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ArchivedByProject)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Project.Description)
             </td>

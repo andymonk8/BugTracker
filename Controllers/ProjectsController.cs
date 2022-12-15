@@ -247,7 +247,9 @@ namespace BugTracker.Controllers
                 project.CompanyId = companyId;
 
                 // Set Created Date
-                project.DateCreated = PostgresDate.Format(DateTime.UtcNow);
+                //project.DateCreated = PostgresDate.Format(DateTime.UtcNow);
+
+                project.DateCreated = PostgresDate.Format(project.DateCreated);
 
                 // Determine if an image has been uploaded
                 if (project.ProjectImage != null)
@@ -257,8 +259,11 @@ namespace BugTracker.Controllers
                 }
 
                 // Format start and end dates
-                project.StartDate = PostgresDate.Format(DateTime.UtcNow);
-                project.EndDate = PostgresDate.Format(DateTime.UtcNow);
+                //project.StartDate = PostgresDate.Format(DateTime.UtcNow);
+                //project.EndDate = PostgresDate.Format(DateTime.UtcNow);
+
+                project.StartDate = PostgresDate.Format(project.StartDate!.Value);
+                project.EndDate = PostgresDate.Format(project.EndDate!.Value);
 
                 // Call Project Service
                 await _projectService.AddProjectAsync(project);
@@ -321,8 +326,9 @@ namespace BugTracker.Controllers
 
                     project.DateCreated = PostgresDate.Format(project.DateCreated);
                     //project.DateCreated = PostgresDate.Format(DateTime.UtcNow);
-                    project.StartDate = PostgresDate.Format(DateTime.UtcNow);
-                    project.EndDate = PostgresDate.Format(DateTime.UtcNow);
+
+                    project.StartDate = PostgresDate.Format(project.StartDate!.Value);
+                    project.EndDate = PostgresDate.Format(project.EndDate!.Value);
 
                     // Gets Red Ramen?!
                     //project.StartDate = PostgresDate.Format(project.StartDate);

@@ -92,7 +92,7 @@ else
 							<p>@Model.Description</p>
 							<div class="progress-container progress-info m-b-25">
 								@*Project Name and information*@
-								<span class="progress-badge" style="font-size:small">Project: [Project Name]</span>
+								<span class="progress-badge" style="font-size:small">Project: @Model.Project!.Name</span>
 								<div class="progress">
 									@*Progress bar logic*@
 									@*Variable from razor logic*@
@@ -112,11 +112,11 @@ else
 								@*Project end date*@
 								<li><strong>Deadline:</strong> <span class="">  [Project End date]</</span></li>
 								@*Ticket type*@
-								<li><strong>Type:</strong> <span class="">@Model.TicketType</span></li>
+								<li><strong>Type:</strong> <span class="">@Model.TicketType.Name</span></li>
 								@*Ticket priority*@
-								<li><strong>Priority:</strong> <span class="">@Model.TicketPriority</span></li>
+								<li><strong>Priority:</strong> <span class="">@Model.TicketPriority.Name</span></li>
 								@*Ticket status*@
-								<li><strong>Status:</strong> <span class="">@Model.TicketStatus</span></li>
+								<li><strong>Status:</strong> <span class="">@Model.TicketStatus.Name</span></li>
 							</ul>
 						</div>
 					</div>
