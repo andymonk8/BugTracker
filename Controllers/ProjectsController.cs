@@ -174,32 +174,29 @@ namespace BugTracker.Controllers
 
 
 		// GET: Users Projects
+		[HttpGet]
 		public async Task<IActionResult> MyProjects()
-        {
+		{
+			string userId = _userManager.GetUserId(User);
+			var projects = await _projectService.GetUserProjectsAsync(userId);
 
-            int companyId = User.Identity!.GetCompanyId();
+			return View(projects);
+		}
 
-            List<Project> projects = new();
+		[HttpGet]
+		[Authorize(Roles = "Admin")]
+		public async Task<IActionResult> UnassignedProjects()
+		{
+			int companyId = User.Identity.GetCompanyId();
 
-            if (User.IsInRole(nameof(BTRoles.Admin)))
-            {
-                // Make a call to the service for all projects
-                projects = await _projectService.GetAllProjectsByCompanyIdAsync(companyId);
-            }
-            else
-            {
-                string userId = _userManager.GetUserId(User);
-                // 1. create a new service to get user projects???
-                // 2. make a call to the service
-                projects = await _projectService.GetUserProjectsAsync(userId);
-            }
+			List<Project> projects = await _projectService.GetUnassignedProjectsAsync(companyId);
 
+			return View(projects);
 
-            return View(projects);
-        }
+		}
 
-        // GET: Projects/Details/5
-        public async Task<IActionResult> Details(int? id)
+		// GET: Projects/Details/5
+		public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
             {

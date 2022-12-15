@@ -256,7 +256,7 @@ namespace BugTracker.Services
             BTUser? btUser = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
             // List<Ticket>? tickets = new();
             List<Ticket>? tickets = (await _projectService.GetAllProjectsByCompanyIdAsync(companyId)).Where(p => p.Archived == false)
-                                                    .SelectMany(p => p.Tickets!).Where(t => t.Archived | t.ArchivedByProject).ToList();
+                                                    .SelectMany(p => p.Tickets!).Where(t => t.Archived==false | t.ArchivedByProject==false).ToList();
 
 
 
@@ -329,7 +329,7 @@ namespace BugTracker.Services
             }
         }
 
-        public async Task<IEnumerable<TicketStatus>> GetTicketStatusesAsync()
+		public async Task<IEnumerable<TicketStatus>> GetTicketStatusesAsync()
         {
             try
             {

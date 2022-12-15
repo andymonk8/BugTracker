@@ -447,15 +447,28 @@ namespace BugTracker.Controllers
             }
             else
             {
-                List<Ticket> pmTickets = new();
+                List<Ticket> unassignedTickets = new();
                 foreach (Ticket ticket in tickets)
                 {
                     if (await _projectService.IsAssignedProjectManagerAsync(btUserId, ticket.ProjectId))
-                        pmTickets.Add(ticket);
+                        unassignedTickets.Add(ticket);
                 }
                 return RedirectToAction(nameof(UnassignedTickets));
             }
         }
+
+		[HttpGet]
+		public async Task<IActionResult> MyTickets()
+		{
+			int companyId = User.Identity!.GetCompanyId();
+			
+            string userId = _userManager.GetUserId(User);
+
+			List<Ticket> tickets = await _ticketService.GetTicketByUserIdAsync(userId, companyId);
+
+
+			return View(tickets);
+		}
 
 
 		[HttpPost]

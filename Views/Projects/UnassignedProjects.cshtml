@@ -1,10 +1,16 @@
-﻿@model IEnumerable<BugTracker.Models.Project>
+﻿@using BugTracker.Services.Interfaces;
+@using BugTracker.Services
+@using BugTracker.Models.Enums
+@model IEnumerable<BugTracker.Models.Project>
+
+@inject IBTProjectService _BTProjectService
+@inject IBTRolesService _BTRolesService
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "AllProjects";
 }
 
-<h1>Index</h1>
+<h1>All Projects</h1>
 
 <p>
     <a asp-action="Create">Create New</a>
@@ -47,10 +53,26 @@
     </thead>
     <tbody>
 @foreach (var item in Model) {
-        <tr>
+            <tr class="@(item.Archived ? "border border-2 border-danger" : "")">
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
+                <td>
+                    @{
+                        BTUser? projectManager = await _BTProjectService.GetProjectManagerAsync(item.Id);
+                    }
+
+                    @if (projectManager is null && User.IsInRole(nameof(BTRoles.Admin)))
+                    {
+                        <a class="btn btn-sm btn-outline-info" asp-action="AssignPM" asp-route-id="@item.Id">Assign PM</a>
+                    }
+                    else
+                    {
+                        <text>@(projectManager?.FullName ?? "Unassigned")</text>
+                        <a class="btn btn-sm btn-outline-warning" asp-action="AssignPM" asp-route-id="@item.Id">Manage PM</a>
+
+                    }
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
@@ -81,9 +103,21 @@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Archive" asp-route-id="@item.Id">Archive</a>
             </td>
         </tr>
 }
     </tbody>
 </table>
+
+@*@foreach(var item in Model){
+    <tr class="@(item.Archived ? "border border-2 border-danger" : "")">
+        <td>
+            @Html.DisplayFor(modelItem=> item.Name)
+        </td>
+        <td>
+            @{
+                BTUser? projectManager = await ProjectService.GetProjectManagerAsync()
+            }
+        </td>
+}*@

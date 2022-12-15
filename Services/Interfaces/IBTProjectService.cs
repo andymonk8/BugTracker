@@ -23,6 +23,7 @@ namespace BugTracker.Services.Interfaces
         public Task<bool> IsAssignedProjectManagerAsync(string userId, int projectId);
 		public Task<List<BTUser>> GetAllProjectMembersExceptPMAsync(int projectId, BTUser member);
 		public Task<List<BTUser>> GetProjectMembersByRoleAsync(int projectId, string role);
+		public Task<List<Project>> GetUnassignedProjectsAsync(int companyId);
 
 	}
 }

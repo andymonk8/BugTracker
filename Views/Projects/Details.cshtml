@@ -12,7 +12,7 @@
 @{
 	ViewData["Title"] = "Details";
 	BTUser? projectManager = await _BTProjectService.GetProjectManagerAsync(Model.Id);
-	string BTUser = _userManager.GetUserId(User);
+	string btUser = _userManager.GetUserId(User);
 
 	//BTUser? btUser = await _UserManager
 }
@@ -109,6 +109,22 @@
 						<div class="body" style="overflow-y:auto;height:300px;background-color:antiquewhite">
 							@* Project Activity loop *@
 							[Project Activity  e.g. Ticket History]
+
+							@foreach (TicketHistory history in await _HistoryService.GetProjectTicketsHistoriesAsync(Model.Id, Model.CompanyId))
+							{
+								<span class="date">@history.DateCreated.ToString("dd MMM yyyy")</span>
+								<h6>@history.Description</h6>
+								<span>By: <a href="" title="@history.User!.FullName">@history.User.FullName</a></span>
+								@if (history.PropertyName == "")
+								{
+									<div class="">
+										<p>The ticket <b>@history.PropertyName</b>  was edited</p>
+										<p>@($"Previous {history.PropertyName}:  {history.OldValue}")</p>
+										<p>@($"Current {history.PropertyName}:  {history.NewValue}")</p>
+									</div>
+								}
+							}
+
 						</div>
 
 					</div>
@@ -168,12 +184,12 @@
 												<td>@ticket.DateCreated.ToString("MM-dd-yyyy")</td>
 												<td>
 													<a class="btn btn-sm btn-outline-info" asp-action="Details" asp-controller="Tickets" asp-route-id="@ticket.Id"><i class="fs-5 bi-justify"></i></a>
-													@if (ticket.DeveloperUserId == BTUser || ticket.SubmitterUserId == BTUser || (projectManager?.Id == BTUser) || User.IsInRole(nameof(BTRoles.Admin)))
+													@if (ticket.DeveloperUserId == btUser || ticket.SubmitterUserId == btUser || (projectManager?.Id == btUser) || User.IsInRole(nameof(BTRoles.Admin)))
 													{
 														<a class="btn btn-sm btn-outline-secondary" asp-action="Edit" asp-controller="Tickets" asp-route-id="@ticket.Id"><i class="fs-5 bi-pencil"></i></a>
 													}
 
-													@if (User.IsInRole("Admin") || (projectManager?.Id == BTUser))
+													@if (User.IsInRole("Admin") || (projectManager?.Id == btUser))
 													{
 														<a class="btn btn-sm btn-outline-danger"><i class="fs-5 bi-archive"></i></a>
 													}

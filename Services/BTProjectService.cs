@@ -297,7 +297,51 @@ namespace BugTracker.Services
             }
         }
 
-        public async Task<List<Project>?> GetUserProjectsAsync(string userId)
+		public async Task<List<Project>> GetUnassignedProjectsAsync(int companyId)
+		{
+			List<Project> result = new();
+			List<Project> projects = new();
+
+			try
+			{
+				projects = await _context.Projects
+										 .Include(p => p.ProjectPriority)
+										 .Where(p => p.CompanyId == companyId).ToListAsync();
+
+				foreach (Project project in projects)
+				{
+					if ((await GetProjectMembersByRoleAsync(project.Id, nameof(BTRoles.ProjectManager))).Count == 0)
+					{
+						result.Add(project);
+					}
+				}
+			}
+			catch (Exception)
+			{
+
+				throw;
+			}
+
+			return result;
+		}
+
+		//public async Task<List<Project>> GetUnassignedProjectsAsync(int companyId)
+		//{
+		//	List<Project> projects = new();
+
+		//	try
+		//	{
+		//		projects = (await GetAllProjectsByCompanyIdAsync(companyId)).Where(p => string.IsNullOrEmpty(p.DeveloperUserId)).ToList();
+		//		return projects;
+		//	}
+		//	catch (Exception)
+		//	{
+
+		//		throw;
+		//	}
+		//}
+
+		public async Task<List<Project>?> GetUserProjectsAsync(string userId)
         {
             try
             {
